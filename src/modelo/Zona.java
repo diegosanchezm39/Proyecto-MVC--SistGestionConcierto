@@ -39,6 +39,16 @@ public class Zona {
         return vendidas;
     }
 
+    public int getCapacidadDisponible() {
+        int disp = 0;
+        for (int i = 0; i < capacidad; i++) {
+            if (entradas[i].getEstado().equals("Disponible")) {
+                disp++;
+            }
+        }
+        return disp;
+    }
+    
     public String getNombre() { return nombre; }
     public int getCapacidad() { return capacidad; }
     public int getPrecio() { return precio; }
