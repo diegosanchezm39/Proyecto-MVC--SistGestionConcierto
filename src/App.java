@@ -7,8 +7,13 @@ public class App {
     
     public static void main(String[] args) {
         
-        // 1. Cargamos datos de prueba en la base de datos en memoria (Sistema)
-        // OJO: El administrador ya está creado en la clase Sistema (usuario: admin, clave: 1234)
+        //Datos
+        System.out.println("--- DATOS PARA PRUEBAS ---");
+        System.out.println("ADMINISTRADOR -> Usuario: admin | Clave: 1234");
+        System.out.println("CLIENTE -> DNI: 71234567 | Clave: 123");
+        System.out.println("___________________________");
+        // 1. Cargamos datos de prueba
+        // El administrador ya está creado(usuario: admin, clave: 1234)
         Sistema.clientes.add(new Cliente("Diego", "Sanchez", "71234567", "123", 0));
         Sistema.clientes.add(new Cliente("Jorge", "Zapata", "77654321", "123", 0));
         //Zonas de prueba para el concierto

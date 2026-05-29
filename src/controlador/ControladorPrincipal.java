@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import vista.frmPrincipal;
 import vista.frmIniciar;
 import vista.frmComprar;
-import controlador.ControladorComprar;
+import vista.frmGestionar;
 
 public class ControladorPrincipal {
     private frmPrincipal vista;
@@ -49,8 +49,10 @@ public class ControladorPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Sistema.conectado == Sistema.admin) {
-                    JOptionPane.showMessageDialog(vista, "Abriendo panel de gestión de zonas...");
-                    // TODO: Aquí conectaremos con la ventana de Zonas en la siguiente entrega
+                    vista.dispose();
+                    frmGestionar fGestionar = new frmGestionar();
+                    ControladorGestionar ctrlGestionar = new ControladorGestionar(fGestionar);
+                    ctrlGestionar.iniciar();
                 } else {
                     JOptionPane.showMessageDialog(vista, "Solo el administrador puede gestionar zonas.", "Acceso denegado", JOptionPane.ERROR_MESSAGE);
                 }
@@ -60,8 +62,6 @@ public class ControladorPrincipal {
 
     public void iniciar() {
         vista.setLocationRelativeTo(null);
-        // Si pusiste el label de bienvenida, lo actualizamos aquí:
-        // vista.lblBienvenida.setText("Bienvenido, " + Sistema.conectado.getNombres());
         vista.setVisible(true);
     }
 }
