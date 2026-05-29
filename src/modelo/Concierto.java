@@ -14,14 +14,14 @@ public class Concierto {
         this.numZonas = 0;
     }
 
-    public boolean agregarZona(String nombreZona, int capacidad, int precio) {
-        if (numZonas < 4) {
-            zonas[numZonas] = new Zona(nombre, capacidad, precio);
-            numZonas++;
-            return true;
-        }
-        return false;
+   public boolean agregarZona(String nombreZona, int capacidad, int precio) {
+    if (numZonas < 4) {
+        zonas[numZonas] = new Zona(nombreZona, capacidad, precio);
+        numZonas++;
+        return true;
     }
+    return false;
+}
 
     public boolean eliminarZona(String nombreZona) {
         for (int i = 0; i < numZonas; i++) {
