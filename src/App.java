@@ -11,7 +11,9 @@ public class App {
         // OJO: El administrador ya está creado en la clase Sistema (usuario: admin, clave: 1234)
         Sistema.clientes.add(new Cliente("Diego", "Sanchez", "71234567", "123", 0));
         Sistema.clientes.add(new Cliente("Jorge", "Zapata", "77654321", "123", 0));
-        
+        //Zonas de prueba para el concierto
+        Sistema.concierto.agregarZona("VIP", 50, 300);
+        Sistema.concierto.agregarZona("General", 200, 100);
         // 2. Instanciamos la Vista
         frmIniciar fInicio = new frmIniciar();
         

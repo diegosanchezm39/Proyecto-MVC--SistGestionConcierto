@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import vista.frmPrincipal;
 import vista.frmIniciar;
+import vista.frmComprar;
+import controlador.ControladorComprar;
 
 public class ControladorPrincipal {
     private frmPrincipal vista;
@@ -32,8 +34,10 @@ public class ControladorPrincipal {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Sistema.conectado != Sistema.admin) {
-                    JOptionPane.showMessageDialog(vista, "Abriendo panel de compras de entradas...");
-                    // TODO: Aquí conectaremos con la ventana de Ventas en la siguiente entrega
+                   vista.dispose(); 
+                   frmComprar fComprar = new frmComprar();
+                   ControladorComprar ctrlComprar = new ControladorComprar(fComprar);
+                   ctrlComprar.iniciar();   
                 } else {
                     JOptionPane.showMessageDialog(vista, "El administrador no puede comprar entradas.", "Acceso denegado", JOptionPane.WARNING_MESSAGE);
                 }
