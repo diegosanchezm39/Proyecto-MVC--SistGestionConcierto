@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import modelo.ClienteArreglo;
 import modelo.Cliente;
 import vista.frmIniciar;
+import vista.frmPrincipal;
 
 public class ControladorInicio {
     private ClienteArreglo modelo;
@@ -37,7 +38,9 @@ public class ControladorInicio {
                     vista.dispose(); // Cierra el login
                     JOptionPane.showMessageDialog(null, "Bienvenido Administrador");
                     
-                    // TODO: Aquí abriremos la ventana principal de Admin más adelante
+                    frmPrincipal fPrincipal = new frmPrincipal();
+                    ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+                    ctrlPrincipal.iniciar();
                     
                 } else {
                     // 2. Verificamos si es un cliente registrado
@@ -47,7 +50,9 @@ public class ControladorInicio {
                         vista.dispose(); // Cierra el login
                         JOptionPane.showMessageDialog(null, "Bienvenido Cliente: " + c.getNombres());
                         
-                        // TODO: Aquí abriremos la ventana principal de Cliente más adelante
+                        frmPrincipal fPrincipal = new frmPrincipal();
+                        ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+                        ctrlPrincipal.iniciar();
                         
                     } else {
                         // Credenciales incorrectas
